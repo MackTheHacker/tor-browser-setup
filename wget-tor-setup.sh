@@ -4,16 +4,15 @@
 # Before you run this script, make sure that wget points to https://www.torproject.org/.
 # If it does not, then do not run this script. (The unedited version of this script should point to https://dist.torproject.org 
 
-wget https://dist.torproject.org/torbrowser/8.0.8/tor-browser-linux64-8.0.8_en-US.tar.xz 
-wget https://dist.torproject.org/torbrowser/8.0.8/tor-browser-linux64-8.0.8_en-US.tar.xz.asc
-
+wget https://dist.torproject.org/torbrowser/8.5/tor-browser-linux64-8.5_en-US.tar.xz
+wget https://dist.torproject.org/torbrowser/8.5/tor-browser-linux64-8.5_en-US.tar.xz.asc
 gpg --keyserver pool.sks-keyservers.net --recv-keys 0x4E2C6E8793298290
 gpg --fingerprint 0x4E2C6E8793298290
 
-gpg --verify tor-browser-linux64-8.0.8_en-US.tar.xz.asc > torcheck.txt 2>&1 
+gpg --verify tor-browser-linux64-8.5_en-US.tar.xz.asc > torcheck.txt 2>&1 
 
 if [ "$(grep -c "Good signature" torcheck.txt)" -ge 1 ]; then 
-	tar -xJvf tor-browser-linux64-8.0.8_en-US.tar.xz
+	tar -xJvf tor-browser-linux64-8.5_en-US.tar.xz
 	echo "Would you like to run the Tor Browser right now? [y/N]" 
 	read userChoice 
 	
